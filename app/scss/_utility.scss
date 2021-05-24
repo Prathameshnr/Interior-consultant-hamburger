@@ -1,0 +1,39 @@
+.flex {
+  display: flex;
+
+  &-jc-center {
+    justify-content: center;
+  }
+
+  &-jc-space-btw {
+    justify-content: space-between;
+  }
+  &-jc-space-even {
+    justify-content: space-evenly;
+  }
+
+  &-al-center {
+    align-items: center;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+
+  &-jc-center {
+    justify-content: center;
+  }
+}
+
+.hide-on-mobile {
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-on-desktop {
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}

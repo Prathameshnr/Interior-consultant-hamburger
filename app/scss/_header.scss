@@ -1,0 +1,92 @@
+.header {
+  margin-bottom: 38px;
+
+  @include breakpoint-up(medium) {
+    margin-bottom: 5.25rem;
+  }
+  &__logo {
+    display: block;
+    font-size: 14px;
+    border: 1px solid $primary-font;
+    padding: 0.5rem;
+    transition: transform 200ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__toggle {
+    > span {
+      display: block;
+      background-color: $primary-font;
+      height: 2px;
+      width: 28px;
+      cursor: pointer;
+      transition: all 300ms ease-in-out;
+      transform-origin: 4px 1px;
+      z-index: 1;
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+
+    &.open {
+      //for the Hamburger animation
+      > span:nth-child(1) {
+        transform: rotate(45deg);
+      }
+
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+
+      > span:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &__links {
+    a {
+      transition: all 200ms ease-in-out;
+      //Remove to give proper Hover effect
+      /* &:nth-child(1) {
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid $primary-font;
+      } */
+
+      &:not(:last-child) {
+        margin-right: 5rem;
+      }
+
+      &:hover {
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid $primary-font;
+      }
+    }
+  }
+
+  .show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-bg;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    > a {
+      margin: 0;
+
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+li,
+a {
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+body {
+  background-color: $primary-bg;
+  color: $primary-font;
+  font-family: $Montserrat;
+  padding: 1rem;
+
+  @include breakpoint-up(medium) {
+    padding: 2.875rem 5.3125rem;
+    height: 100vh;
+  }
+}
+
+.ham {
+  z-index: 2;
+}
+
+footer {
+  font-size: 12px;
+  font-weight: 700;
+  color: $footer-font;
+  text-align: center;
+}
